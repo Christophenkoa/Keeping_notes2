@@ -11,9 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import java.util.List;
 
@@ -33,7 +30,7 @@ public class NoteListActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(NoteListActivity.this , MainActivity.class);
+                Intent intent = new Intent(NoteListActivity.this , NoteActivity.class);
                 startActivity(intent);
             }
         });
@@ -56,9 +53,9 @@ public class NoteListActivity extends AppCompatActivity {
         listNotes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(NoteListActivity.this , MainActivity.class);
+                Intent intent = new Intent(NoteListActivity.this , NoteActivity.class);
                 //NoteInfo note = (NoteInfo) listNotes.getItemAtPosition(position);
-                intent.putExtra(MainActivity.NOTE_POSITION, position);
+                intent.putExtra(NoteActivity.NOTE_POSITION, position);
                 startActivity(intent);
 
             }
